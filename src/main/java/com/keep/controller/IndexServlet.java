@@ -57,7 +57,7 @@ public class IndexServlet extends HttpServlet {
                 indView.print(response, "Error", indView.readHtmlFile("error"));
                 break;
             case "/":
-                indView.print(response, "Keep", indView.readHtmlFile("index-body"));
+                indView.print(response, "Trello", indView.readHtmlFile("index-body"));
                 break;
         }
     }
