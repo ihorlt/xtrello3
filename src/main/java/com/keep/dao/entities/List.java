@@ -11,9 +11,6 @@ public class List {
     /** The id board. */
     private String idBoard;
 
-    /** The pos. */
-    private double pos;
-
     /**
      * Gets the name.
      *
