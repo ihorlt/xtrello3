@@ -1,5 +1,8 @@
 package com.keep.controller;
 
+import com.mysql.fabric.jdbc.FabricMySQLConnectionProxy;
+import com.mysql.jdbc.jdbc2.optional.ConnectionWrapper;
+
 import java.io.*;
 import javax.servlet.*;
 import javax.servlet.http.*;
@@ -12,13 +15,12 @@ public class Register extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
 
-        String number = request.getParameter("id");
         String name = request.getParameter("name");
         String username = request.getParameter("username");
         String password = request.getParameter("password");
         String status = request.getParameter("status");
         String role = request.getParameter("role");
-        int id = Integer.parseInt(number);
+        //int id = Integer.parseInt(number);
         try{
 
             //loading drivers for mysql
@@ -27,15 +29,13 @@ public class Register extends HttpServlet {
             //creating connection with the database
             Connection  con=DriverManager.getConnection
                     ("jdbc:mysql://localhost:3306/xtrello","root","17492911");
-
             PreparedStatement ps=con.prepareStatement
-                    ("insert into user values(?,?,?,?,?,?)");
-            ps.setInt(1, id);
-            ps.setString(2, username);
-            ps.setString(3, password);
-            ps.setString(4, name);
-            ps.setString(5, status);
-            ps.setString(6, role);
+                    ("insert into user (username, password, name, status, role) values(?, ?, ?, ?,? )");
+            ps.setString(1, username);
+            ps.setString(2, password);
+            ps.setString(3, name);
+            ps.setString(4, status);
+            ps.setString(5, role);
             int i=ps.executeUpdate();
 
             if(i>0)
