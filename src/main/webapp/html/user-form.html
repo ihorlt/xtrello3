@@ -1,10 +1,19 @@
+<header class="masthead d-flex">
+    <div class="container text-center my-auto">
+        <h1 style="color:#dbe3ff">xTrello</h1>
+    </div>
+    <div class="overlay"></div>
 <div class="container-fluid">
     <div class="row justify-content-center">
         <div class="col-6">
 
-            <form>
+            <form action="controller/Register" method ="post">
                 <div >
                     <br> </br>
+                </div>
+                <div hidden class="form-group">
+                    <label for="exampleInputId">id</label>
+                    <input type="number"  name="id" class="form-control" id="exampleInputId"  value = "1">
                 </div>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Email address</label>
@@ -26,6 +35,11 @@
                     <option value="deleted">deleted</option>
                     <option value="banned">banned</option>
                 </select>
+                <label hidden for="exampleInputName"></label>
+                <select hidden class="form-control" name="role">
+                    <option value="user">user</option>
+                    <option value="admin">admin</option>
+                </select>
                 <div >
                     <br> </br>
                 </div>
@@ -35,3 +49,10 @@
         </div>
     </div>
 </div>
+</header>
+<footer >
+    <div >
+
+        <p class="text-center">Copyright &copy; xTrello 2018</p>
+    </div>
+</footer>
