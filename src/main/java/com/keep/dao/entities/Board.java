@@ -1,5 +1,7 @@
 package com.keep.dao.entities;
 
+import java.util.Objects;
+
 public class Board {
 
     private Long id;
@@ -13,7 +15,7 @@ public class Board {
 
     }
 
-    public Board (Long id, String Board, Long user_id, String createDate, String title) {
+    public Board(Long id, String Board, Long user_id, String createDate, String title) {
         this.id = id;
         this.Board = Board;
         this.user_id = user_id;
@@ -21,7 +23,9 @@ public class Board {
         this.title = title;
     }
 
-    /** get-set idBoard */
+    /**
+     * get-set idBoard
+     */
 
     public long getId() {
         return id;
@@ -31,7 +35,9 @@ public class Board {
         this.id = id;
     }
 
-    /** get-set Board*/
+    /**
+     * get-set Board
+     */
 
     public String getBoard() {
         return Board;
@@ -41,7 +47,9 @@ public class Board {
         Board = board;
     }
 
-    /** get-set user_id*/
+    /**
+     * get-set user_id
+     */
 
     public Long getUser_id() {
         return user_id;
@@ -51,7 +59,9 @@ public class Board {
         this.user_id = user_id;
     }
 
-    /** get-set createDate */
+    /**
+     * get-set createDate
+     */
 
     public String getCreatedDate() {
         return createdDate;
@@ -61,7 +71,9 @@ public class Board {
 
     }
 
-    /** get-set title */
+    /**
+     * get-set title
+     */
 
     public String getTitle() {
         return title;
@@ -71,8 +83,32 @@ public class Board {
         this.title = title;
     }
 
+    @Override
+    public String toString() {
+        return "Board{" +
+                "id=" + id +
+                ", board='" + Board + '\'' +
+                ", user_id=" + user_id +
+                ", createdDate='" + createdDate + '\'' +
+                ", title='" + title + '\'' +
+                '}';
+    }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Board board1 = (Board) o;
+        return id == board1.id &&
+                Objects.equals(Board, board1.Board) &&
+                Objects.equals(user_id, board1.user_id) &&
+                Objects.equals(createdDate, board1.createdDate) &&
+                Objects.equals(title, board1.title);
 
+    }
 
-
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, Board, user_id, createdDate, title);
+    }
 }

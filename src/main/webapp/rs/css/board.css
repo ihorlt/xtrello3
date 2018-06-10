@@ -1,0 +1,209 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Helvetica Neue', 'sans-serif';
+    background-image: url("https://source.unsplash.com/user/erondu/1600x1600");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-color: #7c7c7c;
+}
+input:focus, button:focus, textarea:focus{
+    outline: none;
+}
+.icon-times{
+    margin-left: 55%;
+    font-size: 20px;
+}
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+/*------HEADER------*/
+header{
+    background-color: rgba(0,0,0,.15);
+    color: white;
+}
+nav{
+    padding: 5px 10px;
+    margin: 0 auto;
+}
+.tableros{
+    border-radius: 3px;
+    background: rgba(255,255,255,.2);
+    color: #f3f3f3;
+    display: inline-block;
+    padding: 5px;
+}
+.tableros i{
+    color: inherit;
+}
+.tableros:hover{
+    cursor: pointer;
+    background: rgba(255,255,255,.1);
+    color: white;
+}
+.tableros:hover span{
+    color: white;
+}
+.search{
+    border-radius: 3px;
+    background: rgba(255,255,255,.2);
+    color: #f3f3f3;
+    display: inline-block;
+    padding: 5px;
+    width: 150px;
+}
+.search i{
+    margin-left: 90%;
+}
+.brand{
+    display: 	inline-block;
+    width: 65%;
+    text-align: center;
+    vertical-align: middle;
+}
+.brand span{
+    background-image: url(../img/header-logo-2x.png);
+    background-size: 80px 30px;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 30px;
+    display: block;
+}
+.icons{
+    display: inline-block;
+}
+.icons a{
+    display: inline-block;
+    border-radius: 3px;
+    background: rgba(255,255,255,.2);
+    color: #f3f3f3;
+    display: inline-block;
+    padding: 5px;
+}
+
+h2{
+    text-transform: uppercase;
+    color: white;
+    font-size: 18px;
+    margin: 10px;
+}
+
+
+/*---LISTAS----*/
+#container .first-list{
+    border-radius: 5px;
+    background-color: black;
+    color: #efefef;
+    display: inline-block;
+    margin-left: 10px;
+    padding:10px;
+    width: 220px;
+    opacity: 0.3;
+}
+#container .first-list:hover{
+    cursor: pointer;
+    opacity: 0.5;
+}
+.formulario-lista{
+    border-radius: 4px;
+    background-color: #E2E4E6;
+    float: left;
+    margin-left: 5px;
+    margin-right: 5px;
+    padding: 5px;
+    width: 250px;
+}
+.formulario-lista input{
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    background: #D6D8DA;
+    display: block;
+    font-size: 14px;
+    margin-bottom: 5px;
+    width: 95%;
+    padding: 5px;
+}
+.formulario-lista button{
+    border:none;
+    background-color: #59A446;
+    color: white;
+    font-weight: bolder;
+    font-size: 14px;
+    padding: 8px 12px;
+}
+.formulario-lista button:hover{
+    cursor: pointer;
+    background-color: #488239;
+}
+.lista{
+    border-radius: 4px;
+    background-color: #E2E4E6;
+    float: left;
+    margin-right: 5px;
+    margin-left: 5px;
+    width: 250px;
+}
+.lista-title{
+    margin:10px 14px;
+    font-weight: bold;
+}
+.add-tarjeta{
+    border-radius: 4px;
+    font-size: 14px;
+    color: #83878f;
+}
+.add-tarjeta span{
+    border-radius: 4px;
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 10px;
+}
+
+.add-tarjeta span:hover{
+    background-color: #cfcfcf;
+    color: #53555a;
+    cursor: pointer;
+    text-decoration: underline;
+}
+.add-tarjeta textarea{
+    border-radius: 3px;
+    box-sizing: border-box;
+    border: none;
+    height: 50px;
+    font-size: 14px;
+    margin:10px;
+    margin-top: 0;
+    resize: none;
+    width: 92%;
+    padding: 5px;
+}
+.add-tarjeta textarea::placeholder{
+    font-size: 14px;
+}
+.add-tarjeta button{
+    border:none;
+    background-color: #59A446;
+    color: white;
+    font-weight: bolder;
+    font-size: 14px;
+    margin: 0 auto 10px 10px;
+    padding: 8px 12px;
+}
+.add-tarjeta button:hover{
+    cursor: pointer;
+    background-color: #488239;
+}
+.tarjeta-creada{
+    border-radius: 3px;
+    background-color: white;
+    font-size: 15px;
+    margin: 0 auto;
+    margin-bottom: 10px;
+    padding: 7px;
+    width: 220px;
+}
+
