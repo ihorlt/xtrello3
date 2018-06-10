@@ -30,3 +30,21 @@ VALUES (1, 'igor@lyutak.com', '1122', 'Igor', 'active', 'admin');
 INSERT INTO xkeep3.note
 (note, user_id, createdDate, title)
 VALUES ('test text', 1, '2018-05-19:12:12:12', 'Test');
+
+
+create table board
+(
+  id         int auto_increment
+    primary key,
+  Board      mediumtext null,
+  user_id    int        null,
+  createDate date       null,
+  title      mediumtext null,
+  constraint Board_user_id_uindex
+  unique (user_id),
+  constraint Board_user_id_fk
+  foreign key (user_id) references user (id)
+    on update cascade
+    on delete cascade
+);
+
