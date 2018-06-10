@@ -12,7 +12,7 @@ public class DataSource implements AutoCloseable {
     // JDBC driver name and database URL
     private static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
 
-    private static final String DB_URL="jdbc:mysql://localhost/xtrello?user=root&password=root";
+    private static final String DB_URL="jdbc:mysql://localhost/xtrello?user=root&password=17492911";
 
 
 
