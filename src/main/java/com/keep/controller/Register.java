@@ -7,6 +7,7 @@ import java.io.*;
 import javax.servlet.*;
 import javax.servlet.http.*;
 import java.sql.*;
+import com.keep.view.IndexView;
 
 public class Register extends HttpServlet {
 
@@ -14,6 +15,7 @@ public class Register extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
+        IndexView indView = IndexView.getInstance();
 
         String name = request.getParameter("name");
         String username = request.getParameter("username");
@@ -40,7 +42,7 @@ public class Register extends HttpServlet {
 
             if(i>0)
             {
-                out.println("You are sucessfully registered");
+                indView.print(response, "Registered", indView.readHtmlFile("registered"));
             }
 
         }
