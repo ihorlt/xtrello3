@@ -8,17 +8,17 @@ import java.util.Objects;
 public class Note {
     private long id;
     private String note;
-    private Long user_id;
+    private Long board_id;
     private String createdDate;
     private String title;
 
     public Note() {
     }
 
-    public Note(long id, String note, Long user_id, String createdDate, String title) {
+    public Note(long id, String note, Long board_id, String createdDate, String title) {
         this.id = id;
         this.note = note;
-        this.user_id = user_id;
+        this.board_id = board_id;
         this.createdDate = createdDate;
         this.title = title;
     }
@@ -39,12 +39,12 @@ public class Note {
         this.note = note;
     }
 
-    public Long getUser_id() {
-        return user_id;
+    public Long getBoard_id() {
+        return board_id;
     }
 
-    public void setUser_id(Long user_id) {
-        this.user_id = user_id;
+    public void setBoard_id(Long board_id) {
+        this.board_id = board_id;
     }
 
     public String getCreatedDate() {
@@ -68,7 +68,7 @@ public class Note {
         return "Note{" +
                 "id=" + id +
                 ", note='" + note + '\'' +
-                ", user_id=" + user_id +
+                ", board_id=" + board_id +
                 ", createdDate='" + createdDate + '\'' +
                 ", title='" + title + '\'' +
                 '}';
@@ -81,7 +81,7 @@ public class Note {
         Note note1 = (Note) o;
         return id == note1.id &&
                 Objects.equals(note, note1.note) &&
-                Objects.equals(user_id, note1.user_id) &&
+                Objects.equals(board_id, note1.board_id) &&
                 Objects.equals(createdDate, note1.createdDate) &&
                 Objects.equals(title, note1.title);
     }
@@ -89,6 +89,6 @@ public class Note {
     @Override
     public int hashCode() {
 
-        return Objects.hash(id, note, user_id, createdDate, title);
+        return Objects.hash(id, note, board_id, createdDate, title);
     }
 }

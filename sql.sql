@@ -12,23 +12,33 @@ create table user
 )
 comment 'users for notes' engine=InnoDB;
 
-CREATE TABLE note
+create table note
 (
-    id int(11) PRIMARY KEY AUTO_INCREMENT,
-    note longtext,
-    user_id int(11) NOT NULL,
-    createdDate varchar(25),
-    title varchar(200),
-    CONSTRAINT note_user_id_fk FOREIGN KEY (user_id) REFERENCES user (id) ON DELETE CASCADE ON UPDATE CASCADE
-);
-ALTER TABLE note COMMENT = 'notes of users';
+	id int auto_increment
+		primary key,
+	note longtext null,
+	board_id int not null,
+	createdDate varchar(25) null,
+	title varchar(200) null,
+	constraint note_board_id_fk
+		foreign key (board_id) references board (id)
+			on update cascade on delete cascade
+)
+comment 'notes of users'
+;
 
-INSERT INTO xkeep3.user
+create index note_board_id_fk
+	on note (board_id)
+;
+
+
+
+INSERT INTO xtrello.user
 (id, username, password, name, status, role)
 VALUES (1, 'igor@lyutak.com', '1122', 'Igor', 'active', 'admin');
 
-INSERT INTO xkeep3.note
-(note, user_id, createdDate, title)
+INSERT INTO xtrello.note
+(note, board_id, createdDate, title)
 VALUES ('test text', 1, '2018-05-19:12:12:12', 'Test');
 
 
@@ -37,13 +47,13 @@ create table board
   id         int auto_increment
     primary key,
   Board      mediumtext null,
-  user_id    int        null,
+  board_id    int        null,
   createDate date       null,
   title      mediumtext null,
   constraint Board_user_id_uindex
-  unique (user_id),
+  unique (board_id),
   constraint Board_user_id_fk
-  foreign key (user_id) references user (id)
+  foreign key (board_id) references user (id)
     on update cascade
     on delete cascade
 );

@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.GregorianCalendar;
 
 @WebServlet(name = "IndexServlet", value = {"/*"})
 public class IndexServlet extends HttpServlet {
@@ -58,6 +59,7 @@ public class IndexServlet extends HttpServlet {
                 break;
             case "/":
                 indView.print(response, "Trello", indView.readHtmlFile("index-body"));
+                System.out.println(new GregorianCalendar().getTime().toString());
                 break;
         }
     }
