@@ -1,13 +1,16 @@
 package com.keep.controller;
 
-import com.mysql.fabric.jdbc.FabricMySQLConnectionProxy;
-import com.mysql.jdbc.jdbc2.optional.ConnectionWrapper;
-
-import java.io.*;
-import javax.servlet.*;
-import javax.servlet.http.*;
-import java.sql.*;
 import com.keep.view.IndexView;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 
 public class Register extends HttpServlet {
 
@@ -30,7 +33,7 @@ public class Register extends HttpServlet {
 
             //creating connection with the database
             Connection  con=DriverManager.getConnection
-                    ("jdbc:mysql://localhost:3306/xtrello","root","17492911");
+                    ("jdbc:mysql://localhost:3306/xkeep3","root","");
             PreparedStatement ps=con.prepareStatement
                     ("insert into user (username, password, name, status, role) values(?, ?, ?, ?,? )");
             ps.setString(1, username);

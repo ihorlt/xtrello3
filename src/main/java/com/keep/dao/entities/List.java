@@ -3,7 +3,7 @@ package com.keep.dao.entities;
 public class List {
 
     /** The name. */
-    private String name;
+    private String listname;
 
     /** The closed. */
     private boolean closed;
@@ -17,7 +17,7 @@ public class List {
      * @return the name
      */
     public String getName() {
-        return name;
+        return listname;
     }
 
     /**
@@ -27,7 +27,7 @@ public class List {
      *            the new name
      */
     public void setName(String name) {
-        this.name = name;
+        this.listname = name;
     }
 
     /**

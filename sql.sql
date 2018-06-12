@@ -24,8 +24,7 @@ create table note
 		foreign key (board_id) references board (id)
 			on update cascade on delete cascade
 )
-comment 'notes of users'
-;
+comment 'notes of users';
 
 create index note_board_id_fk
 	on note (board_id)
@@ -33,11 +32,11 @@ create index note_board_id_fk
 
 
 
-INSERT INTO xtrello.user
+INSERT INTO xkeep3.user
 (id, username, password, name, status, role)
 VALUES (1, 'igor@lyutak.com', '1122', 'Igor', 'active', 'admin');
 
-INSERT INTO xtrello.note
+INSERT INTO xkeep3.note
 (note, board_id, createdDate, title)
 VALUES ('test text', 1, '2018-05-19:12:12:12', 'Test');
 
@@ -58,3 +57,6 @@ create table board
     on delete cascade
 );
 
+INSERT INTO xkeep3.board
+(board_id, Board, board_id, createdDate, title)
+VALUES ('1','test', 1, '2018-05-19:12:12:12', '007');

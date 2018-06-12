@@ -38,7 +38,7 @@ public class IndexServlet extends HttpServlet {
                     if (! isLogin){
                         response.sendRedirect("/error");
                     } else {
-                        response.sendRedirect("/welcome");
+                        response.sendRedirect("/board");
                     }
                 }
 
