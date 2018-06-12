@@ -1,6 +1,7 @@
 package com.keep.controller;
 
 import com.keep.dao.entities.User;
+import com.keep.dao.repository.BoardDao;
 import com.keep.dao.repository.UserDao;
 import com.keep.view.IndexView;
 
@@ -31,6 +32,8 @@ public class IndexServlet extends HttpServlet {
                 UserDao userDao = new UserDao();
                 String username = request.getParameter("username");
                 User user = userDao.findByUsername(username);
+                BoardDao boardDao = new BoardDao();
+                String boardid = request.getParameter("boardname");
                 System.out.println(user);
                 //check whether there is an input from a from
                 if(username != null && username.length() > 0 ){
