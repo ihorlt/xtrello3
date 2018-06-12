@@ -19,7 +19,7 @@ public class BoardDao {
             sql = "INSERT INTO board (Board, user_id, createDate, title)  " +
                     "VALUES (?, ?, ?, ?)";
         } else {
-            sql = "UPDATE board SET Boardр=?, user_id=?, createDate=?, title=? " +
+            sql = "UPDATE board SET Board=?, user_id=?, createDate=?, title=? " +
                     " WHERE id = " + board.getId();
         }
 
