@@ -49,7 +49,7 @@ public class IndexServlet extends HttpServlet {
                 break;
 
             case "/profile":
-                indView.print(response, "Profile", indView.readHtmlFile("user-form"));
+                indView.print(response, "Profile", indView.readHtmlFile("profile"));
                 break;
             case "/signup":
                 indView.print(response, "Signup", indView.readHtmlFile("user-form"));
