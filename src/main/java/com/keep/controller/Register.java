@@ -45,7 +45,7 @@ public class Register extends HttpServlet {
 
             if(i>0)
             {
-                indView.print(response, "Registered", indView.readHtmlFile("registered"));
+                out.println(indView.readHtmlFile("registered"));
             }
 
         }
